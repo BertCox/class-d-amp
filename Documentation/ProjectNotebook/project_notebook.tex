@@ -25,6 +25,7 @@
 \usepackage{verbatim}
 \usepackage{fullpage}
 \usepackage{hyperref}
+\usepackage{parskip}
 
 %Path to global documentation library functions
 %Modify this to /path-to-documentation-templates/lbr
@@ -47,8 +48,8 @@
 \hypersetup{
 	bookmarks=true, 					%Enable pdf bookmarks
 	pdfborder={0,0,0},					%Disable borders around links
-	pdftitle={Project Notebook (template)},		%Name of PDF document
-	pdfauthor={George Hadley},				%Author of PDF document
+	pdftitle={Class-D Amp Design Notebook)},		%Name of PDF document
+	pdfauthor={Ben Laskowski},				%Author of PDF document
 	pdfsubject={Embedded Electronics},		%Subject of PDF document
 	pdfkeywords={diy,electronics,nbitwonder},	%Keywords for PDF document
 	colorlinks={true},					%Enable colored links
@@ -63,8 +64,8 @@
 
 %Modify these to reflect your documentation
 \newcommand{\documentationtype}{Project Notebook}
-\newcommand{\projectname}{ProjectName  }
-\newcommand{\projectversion}{ProjectVersion  }
+\newcommand{\projectname}{Class D Amplifier }
+\newcommand{\projectversion}{1.0}
 
 %Header/Footer Definitions
 \pagestyle{fancy}
@@ -87,22 +88,51 @@
 % Project Notebook entries should be enclosed in boxes and contain a tagline
 %	detailing the entry number, date, revision (project minor version), and 
 %	a short, descriptive title
-\begin{nbentry}{001}{12/28/2010}{0.00}{Example entry}
-\\ This is a test. This is a test. This is a test. This is a test. This is a test. This is a test. \\This is a test.\\
+\begin{nbentry}{001}{1/27/2011}{1.00}{Defining requirements}
+After the overwhelming success of the Class-D audio amplifier, it was decided to pursue an impoved, less experimental version.  Some ideas for the revised circuit include using entirely surface mount parts (reduced size and potentially increased performance), a higher supply voltage (increased power output), and an output inductor with a lower series resistance.
 
-\begin{figure}[h!]
-    \centering
-        \includegraphics{./img/sample_picture.png}
-        \caption{A sample image for a project notebook}
-\end{figure}
+Other ideas brought forward for consideration are the use of a different class, such as Class G, Class H, Class I, or Class T.  These ideas were rejected due to potential copyright/patent issues and complexity.
 \end{nbentry}
 
-\newpage
-Header/Footer example
-% Sources Cited
-% Add a section detailing all external source citations. The IEEE citation
-%	style is recommended. For guidelines on using the IEEE citation style,
-%	refer to
-%   http://www.ieee.org/portal/cms_docs_iportals/iportals/publications/authors/transjnl/stylemanual.pdf
+\begin{nbentry}{002}{1/29/2011}{1.00}{Initial BOM}
+This post is duplicated from the NBitWonder Forums.
+
+After some research, I've arrived at a partial bill of materials.
+
+\begin{itemize}
+\item MOSFETs - DMN4009
+\item Gate driver - IRS2004
+\item Comparator - LM311
+\item Integrating error amp - TL082
+\end{itemize}
+
+The amplifier will, like the prototype, be a self-oscillating type. My hope is that with proper construction techniques, the operating frequency will be quite high, ideally upwards of 500kHz. To that end, the output filter has been designed as a second-order Butterworth filter with a cutoff of 50kHz when operated with an 8-ohm speaker, a common value for home use. An inductor has been identified with a very low series resistance, which should help efficiency improve over the prototype.
+
+The MOSFETs selected for use this time are cheaper than the IRL520Ns used last time and have a much lower on-state resistance, which should lead to increased efficiency. The MOSFET gate driver is cheaper than the one used for the experiment, but supports a lower drive current and a lower maximum voltage -- but at the voltages slated for use in this project, this becomes a non-issue.
+
+The input stages (TL082 and LM311) are slated to be unchanged from the previous iteration, since the parts are already low-cost and well-suited for the task at hand.
+
+Expected power output, based on a +/-18V supply and an 8-ohm speaker, is 
+\(
+\frac{18^2}{ 8 \times 2} = 20W
+\)
+ RMS under ideal conditions. Peak power (ie, turning on one MOSFET or the other and allowing the output filter to reach steady state) is arrived at with
+\(
+\frac{V^2}{ R}
+\)
+; the extra factor of 2 converts peak power to RMS. To support this power output, the power supply should be capable of delivering
+\(
+\sqrt{\frac{20W}{8 \Omega}} = 1.58
+\)
+amps per channel.
+\end{nbentry}
+
+\begin{nbentry}{003}{1/30/2011}{1.00}{PCB Layout}
+Today saw significant work on the PCB layout.
+\end{nbentry}
+
+\begin{nbentry}{003}{1/31/2011}{1.00}{More PCB Layout}
+The PCB layout was finished today.  A secondary version was created that features RCA input jacks instead of the more compact and lower cost 3.5mm stereo minijack.
+\end{nbentry}
 
 \end{document}
