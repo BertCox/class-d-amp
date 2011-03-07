@@ -74,7 +74,7 @@
 \rhead{\projectname  v\projectversion  \documentationtype}
 \lfoot{\href{http://nbitwonder.com}{http://nbitwonder.com} }
 \cfoot{\thepage}
-\rfoot{[Insert Copyright Here]}
+\rfoot{Copyright 2011 NBitWonder}
 
 \begin{document}
 \thispagestyle{plain}
@@ -131,8 +131,18 @@ amps per channel.
 Today saw significant work on the PCB layout.
 \end{nbentry}
 
-\begin{nbentry}{003}{1/31/2011}{1.00}{More PCB Layout}
+\begin{nbentry}{004}{1/31/2011}{1.00}{More PCB Layout}
 The PCB layout was finished today.  A secondary version was created that features RCA input jacks instead of the more compact and lower cost 3.5mm stereo minijack.
+\end{nbentry}
+
+\begin{nbentry}{005}{3/5/2011}{1.00}{Prototype tweaks}
+While waiting for the PCBs to come in, I worked on the breadboarded prototype a little bit.  I discovered that by changing the resistor and capacitor in the integrating feedback loop to 1M and 0.001uF respectively, power output increased greatly before audible distortion set in.  Thankfully, implementing this on the PCB does not require any changes in the layout.
+\end{nbentry}
+
+\begin{nbentry}{006}{3/6/2011}{1.00}{Continued prototype work}
+Today, I constructed a duplicate amplifier circuit on the breadboard to have stereo capability, making sure to incorporate the changes from yesterday.  Testing with my laptop as a signal source produced good results, though it seems that clipping sets in at a lower level now.  My theory as to the cause is that the power supply I am using for testing cannot supply enough current to run both stereo channels at a high volume simultaneously.
+
+With the 'laptop test' complete, I moved the amp to the living room to try it with my TV.  Upon powering on the circuit, a loud 60Hz buzz permeated the room.  It was determined that the cause of the buzz was a ground loop -- the TV and amp were both grounded, and the signal cable between them also had a ground connection.  Removing the AC ground from the power supply used on the amplifier solved the problem by eliminating all directly-connected paths between the two circuit grounds.
 \end{nbentry}
 
 \end{document}
