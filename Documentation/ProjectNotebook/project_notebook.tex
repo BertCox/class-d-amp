@@ -74,7 +74,7 @@
 \rhead{\projectname  v\projectversion  \documentationtype}
 \lfoot{\href{http://nbitwonder.com}{http://nbitwonder.com} }
 \cfoot{\thepage}
-\rfoot{Copyright 2011 NBitWonder}
+\rfoot{\copyright 2011 NBitWonder}
 
 \begin{document}
 \thispagestyle{plain}
@@ -143,6 +143,28 @@ While waiting for the PCBs to come in, I worked on the breadboarded prototype a 
 Today, I constructed a duplicate amplifier circuit on the breadboard to have stereo capability, making sure to incorporate the changes from yesterday.  Testing with my laptop as a signal source produced good results, though it seems that clipping sets in at a lower level now.  My theory as to the cause is that the power supply I am using for testing cannot supply enough current to run both stereo channels at a high volume simultaneously.
 
 With the 'laptop test' complete, I moved the amp to the living room to try it with my TV.  Upon powering on the circuit, a loud 60Hz buzz permeated the room.  It was determined that the cause of the buzz was a ground loop -- the TV and amp were both grounded, and the signal cable between them also had a ground connection.  Removing the AC ground from the power supply used on the amplifier solved the problem by eliminating all directly-connected paths between the two circuit grounds.
+\end{nbentry}
+
+\begin{nbentry}{007}{3/10/2011}{1.00}{PCBs Arrive}
+The PCBs arrived today!
+
+Rather than dive right in with their assembly, though, I decided to spend some time focusing on the amplifier's packaging.  As this is an area I have yet to pay any real attention to on any of my projects, I thought it appropriate to make it a priority for this project.  A brief trip to Radio Shack left me with some 4-40 mounting hardware (nuts, bolts, and washers), a 3x5x7 inch plastic project enclosure, a panel-mount audio input jack, and spring-loaded speaker terminals.  A few hours spent with a Dremel tool left me with suitably sized holes in the enclosure.
+\end{nbentry}
+
+\begin{nbentry}{008}{3/11/2011}{1.00}{Power supply assembly}
+Today saw much of the amplifier's power supply assembly.  The transformer was mounted in the case, along with the power switch, fuse, and line input cord.  The appropriate connections were soldered, and the supply was tested.  The 24V center-tapped transformer that was selected for this build produced a no-load voltage of 13.6VAC from the center tap to each end of the secondary winding.  As this voltage when recitifed and filtered will exceed the voltage limits of at least one of the analog components, it may be necessary to drop the voltage slightly with diodes or an add-on regulator if the voltage does not drop appreciably under load.
+
+I also began assembling the main amplifier PCB, but was forced to an abrupt end when I discovered that I made a mistake in the parts order, procuring one too few comparator and the wrong value of output filter capacitors.  A parts order was placed with Newark for the missing components.
+\end{nbentry}
+
+\begin{nbentry}{009}{3/12/2011}{1.00}{More PCB assembly work}
+The PCB was built up to the extent possible today.  Still not populated are the various input and output connections (as these are more easily done once mounted in the case), the power filtering capacitors (as they are large and would likely impede access to the smaller-footprinted components).
+
+In light of the unexpectedly high transformer secondary voltage discovered yesterday, some work was done to identify a better way of powering the amplifier.  An inexpensive switchmode controller, the AP34063, was found to be a sub-one-dollar solution to the problem.  In a future revision of the amplifier, a single-ended supply of up to 40VDC (or 28VAC followed by a rectifier) will be applied to the amplifier PCB and sent directly to the output MOSFETs.  This input voltage will also pass through a low-current switchmode regulator centered on the aforementioned AP34063 which will generate a 12VDC control supply to operate the input stages and MOSFET gate driver IC.  This will allow for a greater supply voltage, boosting output power; additionally, the power supply requirements will be greatly relaxed.
+\end{nbentry}
+
+\begin{nbentry}{010}{3/13/2011}{1.00}{Single-supply amplifier}
+An intial design was drawn up for the single-supply amplifier.  It is now included in the github repository for the project, though it is far from done.
 \end{nbentry}
 
 \end{document}
