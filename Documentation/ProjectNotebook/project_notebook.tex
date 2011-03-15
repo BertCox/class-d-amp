@@ -169,6 +169,8 @@ An intial design was drawn up for the single-supply amplifier.  It is now includ
 
 \begin{nbentry}{011}{3/14/2011}{1.00}{Single-supply amplifier progress}
 Some work was done on component placement for the single-supply board layout.  Additionally, the MCP14628 was identified as a potential gate driver for the new amplifier version.  It is similar to the IRS2004 currently in use, but with much lower propagation times between a gate command on the input and an action on the output.  Its deadtime is variable and is automatically configured based on the caharacteristics of the attached MOSFETs, which is far ahead of the fixed 520ns deadtime on the IRS2004.  It has been added to the Eagle library.
+
+The downside of using the MCP gate driver is the limit on its bootstrap voltage pin -- 35v.  This means that the supply to the amplifier cannot exceed 30VDC, limiting power output to approximately 15W.  If the output sound quality is better, though, this is probably an acceptable tradeoff to make.  Otherwise, a similar part from National Semiconductor exists -- the LM5104 -- but its cost is about double the MCP part at roughly 3 dollars.
 \end{nbentry}
 
 \end{document}
