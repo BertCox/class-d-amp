@@ -167,4 +167,8 @@ In light of the unexpectedly high transformer secondary voltage discovered yeste
 An intial design was drawn up for the single-supply amplifier.  It is now included in the github repository for the project, though it is far from done.
 \end{nbentry}
 
+\begin{nbentry}{011}{3/14/2011}{1.00}{Single-supply amplifier progress}
+Some work was done on component placement for the single-supply board layout.  Additionally, the MCP14628 was identified as a potential gate driver for the new amplifier version.  It is similar to the IRS2004 currently in use, but with much lower propagation times between a gate command on the input and an action on the output.  Its deadtime is variable and is automatically configured based on the caharacteristics of the attached MOSFETs, which is far ahead of the fixed 520ns deadtime on the IRS2004.  It has been added to the Eagle library.
+\end{nbentry}
+
 \end{document}
