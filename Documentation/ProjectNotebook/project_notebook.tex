@@ -173,4 +173,12 @@ Some work was done on component placement for the single-supply board layout.  A
 The downside of using the MCP gate driver is the limit on its bootstrap voltage pin -- 35v.  This means that the supply to the amplifier cannot exceed 30VDC, limiting power output to approximately 15W.  If the output sound quality is better, though, this is probably an acceptable tradeoff to make.  Otherwise, a similar part from National Semiconductor exists -- the LM5104 -- but its cost is about double the MCP part at roughly 3 dollars.
 \end{nbentry}
 
+\begin{nbentry}{012}{3/16/2011}{1.00}{Single-supply amplifier progress}
+More work was done with regard to component placement on the single-supply version of the amplifier tonight.  It is believed that component placement is now final, more or less.
+
+Additionally, an experiment was conducted with bridging mode on the breadboard.  Recognizeable sound was emitted from the speaker, but it was highly distorted.  It is believe at this time that the output filter's capacitor was connected between the positive speaker lead and the then-irrelevant ground instead of across the speaker terminals.  Further tests will be conducted as time allows.
+
+Another version of the single-supply layout is in progress, too.  This secondary version features bridged outputs for each channel, allowing a theoretical 56W output per channel with a single-ended 30V supply.  If further breadboard tests with bridging (and eventually, single-supply bridging) are successful, this PCB layout will be furthered.  For now, it will be set aside.
+\end{nbentry}
+
 \end{document}
