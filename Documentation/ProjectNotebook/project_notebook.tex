@@ -182,9 +182,19 @@ Another version of the single-supply layout is in progress, too.  This secondary
 \end{nbentry}
 
 \begin{nbentry}{013}{3/19/2011}{1.00}{Progress on amplifiers}
-The missing parts for the single-supply amplifier prototype arrived yesterday.  Unfortunately, I rushed through the order process last week and requested the DIP-8 version of the LM311 instead of the SOIC-8 version.  Another order was placed and should hopefully arrive shortly.  Once I finally have a part with the correct footprint, this amplifier should come together very quickly.  I was, however, able to solder down the new filter capacitors, so that is done.
+The missing parts for the dual-supply amplifier prototype arrived yesterday.  Unfortunately, I rushed through the order process last week and requested the DIP-8 version of the LM311 instead of the SOIC-8 version.  Another order was placed and should hopefully arrive shortly.  Once I finally have a part with the correct footprint, this amplifier should come together very quickly.  I was, however, able to solder down the new filter capacitors, so that is done.
 
 I spent some more time working on the single-supply amplifier layout.  It is now complete -- at least as a first draft -- and has been placed in the git repository.
+\end{nbentry}
+
+\begin{nbentry}{014}{3/22/2011}{1.00}{Magic smoke}
+The replacement comparators arrived today, and they were installed.  The board then had its final components added and peripheral connections to the case-mounted connectors completed.  A brief power-up test revealed that nothing major was wrong.  The MOSFET gate drivers were running quite warm, but they were within specs outlined in the datasheet.  The power supply was measured to be a bipolar 19VDC for 38VDC total across the entire board.  The expected value was more like 33V, but this was deemed to be within spec due to the lightly-loaded power transformer.
+
+The amplifier was then connected to a signal source (my TV) and speakers for its first real test.  The amplifier performed flawlessly for several minutes, but then suddenly ceased to function and simultaneously sent a large amplitude 60Hz buzz to the speakers.  Subsequent disassembly revealed a "burnt component" smell and a MOSFET solder joint that appears to have been reflowed.
+
+The hypothesized failure mode is that a brief power glitch on the AC mains (due to my refrigerator turning on at the exact moment of amplifier failure) temporarily boosted the amplifier supply voltage sufficiently to over-volt the gate of the MOSFET -- which has a maximum Vgs of 20V -- and permanently short it.  This would explain the 60Hz hum of the power supply being directly coupled to the speakers as the transformer struggles to boost the output voltage to its designed operating point.  At this time, it is believed that replacing the power transformer with a lower-voltage output model and replaing the damaged MOSFET will fix the problem with this particular amplifier build.
+
+As time allows, development will continue on the single-supply version of the amp.  It is believed that by regulating a few crucial control voltages, disasters like tonight's can be avoided in the future.  Until the amplifier failed, its output sound quality was noticeably better than the breadboaded version of the amplifier, implying tha the basic is sound and need not be abandoned.
 \end{nbentry}
 
 \end{document}
