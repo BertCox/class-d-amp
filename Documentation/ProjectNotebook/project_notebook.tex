@@ -197,4 +197,13 @@ The hypothesized failure mode is that a brief power glitch on the AC mains (due 
 As time allows, development will continue on the single-supply version of the amp.  It is believed that by regulating a few crucial control voltages, disasters like tonight's can be avoided in the future.  Until the amplifier failed, its output sound quality was noticeably better than the breadboaded version of the amplifier, implying that the basic is sound and need not be abandoned.
 \end{nbentry}
 
+\begin{nbentry}{015}{4/2/2011}{1.00}{Single-supply amplifier}
+A single-supply amplifier prototype was built up on a breadboard today.  After much tweaking of the feedback network to ultimately include a DC-blocking capacitor and adding a second gate driver and half-bridge driven 180 degrees out of phase with the first, a single-supply bridged amplifier is now functional.
+
+Since its modulator is driven from 5v (instead of 12v-15v as in the dual supply version), I was able to connect a logic analyzer to the generated PWM signal.  The switching frequency using reasonably compact construction techniques is approximately 250kHz.
+
+It was found that operating the amplifier near peak volumes from the signal source (an iPod) creates issues with MOSFET gating that may temporarily short-circuit the power supply.  This will have to be addressed before a production version is completed -- but it is believed that switching to the new gate driver with much shorter dead times should improve this.
+
+Schematics and updated board layouts will follow as time allows.
+\end{nbentry}
 \end{document}
