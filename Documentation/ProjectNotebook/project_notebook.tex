@@ -206,4 +206,11 @@ It was found that operating the amplifier near peak volumes from the signal sour
 
 Schematics and updated board layouts will follow as time allows.
 \end{nbentry}
+
+\begin{nbentry}{016}{4/4/2011}{1.00}{Single-supply amplifier}
+Some more experimentation was carried out with the breadboarded bridged single-supply amplifier.  It was determined that -- unexpectedly -- using a 13V supply produced louder output than a 26V supply.  I hypothesize that this is due to the feedback network and its (surprise!) 13:1 ratio between output and feedback.  Changing this to something along the lines of 26:1 or 30:1 should boost output at higher supply voltages.
+
+I also read up on ways to improve the noise performance of the amplifier.  The LM311 comparator datasheet offered a number of suggestions for making its output transitions faster and more decisive (so to speak), which involved shorting two adjacent but otherwise unconnected pins on the IC.  This was done on the breadboard and it seems to help ever so slightly.  Additionally, the datasheet suggests placing a small capacitance directly between the comparator input pins.  A footprint for a suitable cap will be included on the next PCB revision, though the part may not be populated.
+\end{nbentry}
+
 \end{document}
