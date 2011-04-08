@@ -221,4 +221,18 @@ I also made some headway on boosting power output at higher supply voltages.  Re
 On the topic of last weekend's tests that resulted in shorting the power supply, it is now believed that the inductor was entering saturation.  On average, the output voltage is zero (as is the inductor current).  HOWEVER, the inductor current can rise to two or three amps during the highest part of the modulating waveform.  Suppose for instance the H-bridge is currently conducting such that 26V is across the output.  If the capacitor voltage is 0 and the switching frequency is 250kHz (typical measured values), the indcutor current increases to 2.8A near the end of the switching cycle, which is the saturation current for the chosen inductor.  An indcutor in saturation is characterized by an increase in current with no corresponding increase in flux -- so it looks like a dead short.  At least, this is what I think the amp was doing last weekend.
 \end{nbentry}
 
+\begin{nbentry}{018}{4/6/2011}{1.00}{Bridged single-supply amplifier analysis}
+Having recently acquired a basic oscilloscope, I was able to take a few measurements concerning the amplifier's operation.  For a 0.560Vpp input, the amplifier produces an output of 19.2Vpp.  For this test, the input signal was a 1kHz sine wave from my computer sound card.
+
+I was also to determine the point at which the amplifier starts clipping -- the point that corresponds to the maximum output power with good sound quality.  This point occurs at 20Vpp, or at 10V on either side of the neutral point, with a 26V supply.  Because the output stage is an H-bridge, this corresponds to a duty cycle of 0.69 from the output of the comparator for the positive peak of the clipping waveform.  Additionally, 10V across the speaker corresponds to a load current of 1.25A.  The ripple current through the load at this point can be determined as follows:  
+
+We know that the voltage across the inductor can be expressed as (Vsupply - Vout), or here, 16V.  The voltage across an inductor can be expressed as 
+\(
+V_L = L \frac{di}{dt}
+\).  Rearranging and solving for \(dt\), we arrive at 
+\( \frac{V_L dt}{L} = di\).  Here, \(dt\) is the time in which voltage is rising, or the product of the duty cycle \(k\) and the switching period \(T_s\), so \(di = \frac{V_L kT_s}{2L}\) since the total current rise is twice the ripple current.  Substituting our circuit parameters, we arrive at a ripple current of 0.67A.  Adding this ripple value to the average value for this point gives a maximum inductor current of 1.92A, which approaches the saturation value of 2.3A for the indcutor in use in the circuit.  While it is dubious whether the inductor actually enters saturation, it is the best explanation I current have.
+
+Oscilloscope screen captures to follow.
+\end{nbentry}
+
 \end{document}
