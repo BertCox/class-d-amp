@@ -230,7 +230,9 @@ We know that the voltage across the inductor can be expressed as (Vsupply - Vout
 \(
 V_L = L \frac{di}{dt}
 \).  Rearranging and solving for \(dt\), we arrive at 
-\( \frac{V_L dt}{L} = di\).  Here, \(dt\) is the time in which voltage is rising, or the product of the duty cycle \(k\) and the switching period \(T_s\), so \(di = \frac{V_L kT_s}{2L}\) since the total current rise is twice the ripple current.  Substituting our circuit parameters, we arrive at a ripple current of 0.67A.  Adding this ripple value to the average value for this point gives a maximum inductor current of 1.92A, which approaches the saturation value of 2.3A for the indcutor in use in the circuit.  While it is dubious whether the inductor actually enters saturation, it is the best explanation I current have.
+\( \frac{V_L dt}{L} = di\).  Here, \(dt\) is the time in which voltage is rising, or the product of the duty cycle \(k\) and the switching period \(T_s\), so \(di = \frac{V_L kT_s}{2L}\) since the total current rise is twice the ripple current.  Substituting our circuit parameters, we arrive at a ripple current of 0.67A.  Adding this ripple value to the average value for this point gives a maximum inductor current of 1.92A, which approaches the saturation value of 2.3A for the indcutor in use in the circuit.
+
+The other explanation is that my power supply is underpowered for this application.  The supply is capable of a bipolar 13V output unloaded, and the transformer is rated for some 800mA.  As an experiment, I connected an 8-ohm resistor between its 13V terminal and its ground terminal, and the output voltage dropped from 13.2V to 8.72V.  This may partially explain the difficulty I am seeing.  I will try to find a more powerful supply in the 26V range for further testing.  (I have a couple of supplies capable of high current at 12V, but I'd really like to test the amp near the edge of its range to hopefully foresee any self-destruction problems like the ones previously experienced.)
 
 Oscilloscope screen captures to follow.
 \end{nbentry}
