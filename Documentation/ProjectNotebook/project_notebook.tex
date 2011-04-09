@@ -221,7 +221,7 @@ I also made some headway on boosting power output at higher supply voltages.  Re
 On the topic of last weekend's tests that resulted in shorting the power supply, it is now believed that the inductor was entering saturation.  On average, the output voltage is zero (as is the inductor current).  HOWEVER, the inductor current can rise to two or three amps during the highest part of the modulating waveform.  Suppose for instance the H-bridge is currently conducting such that 26V is across the output.  If the capacitor voltage is 0 and the switching frequency is 250kHz (typical measured values), the indcutor current increases to 2.8A near the end of the switching cycle, which is the saturation current for the chosen inductor.  An indcutor in saturation is characterized by an increase in current with no corresponding increase in flux -- so it looks like a dead short.  At least, this is what I think the amp was doing last weekend.
 \end{nbentry}
 
-\begin{nbentry}{018}{4/6/2011}{1.00}{Bridged single-supply amplifier analysis}
+\begin{nbentry}{018}{4/7/2011}{1.00}{Bridged single-supply amplifier analysis}
 Having recently acquired a basic oscilloscope, I was able to take a few measurements concerning the amplifier's operation.  For a 0.560Vpp input, the amplifier produces an output of 19.2Vpp.  For this test, the input signal was a 1kHz sine wave from my computer sound card.
 
 I was also to determine the point at which the amplifier starts clipping -- the point that corresponds to the maximum output power with good sound quality.  This point occurs at 20Vpp, or at 10V on either side of the neutral point, with a 26V supply.  Because the output stage is an H-bridge, this corresponds to a duty cycle of 0.69 from the output of the comparator for the positive peak of the clipping waveform.  Additionally, 10V across the speaker corresponds to a load current of 1.25A.  The ripple current through the load at this point can be determined as follows:  
@@ -235,6 +235,10 @@ V_L = L \frac{di}{dt}
 The other explanation is that my power supply is underpowered for this application.  The supply is capable of a bipolar 13V output unloaded, and the transformer is rated for some 800mA.  As an experiment, I connected an 8-ohm resistor between its 13V terminal and its ground terminal, and the output voltage dropped from 13.2V to 8.72V.  This may partially explain the difficulty I am seeing.  I will try to find a more powerful supply in the 26V range for further testing.  (I have a couple of supplies capable of high current at 12V, but I'd really like to test the amp near the edge of its range to hopefully foresee any self-destruction problems like the ones previously experienced.)
 
 Oscilloscope screen captures to follow.
+\end{nbentry}
+
+\begin{nbentry}{019}{4/8/2011}{1.00}{New inductor}
+I replaced the inductor I had been testing with (which saturates at 2.3A) with one used on a previous project.  The replacement inductor has a saturation current of 4.9A.  Sadly, the low-voltage clipping and temporary power supply shorting behaviors remain.  I would like to blame transistor dead times, but I have no good way to prove this at present.
 \end{nbentry}
 
 \end{document}
