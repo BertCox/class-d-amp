@@ -253,4 +253,10 @@ Noticing that the amp could become unstable at times with the DC blocking capaci
 A new problem was introduced, though.  If the requested output is greater than what the MOSFETs can supply for any period of time, the amplifier can stop oscillating.  Luckily, the failure mode happens such that one half-bridge stops conducting completely, so a speaker-destroying DC current does not appear across the speaker.  This issue will have to be dealt with prior to ordering amplifier PCBs.  One potential correctional measure is to include an additional triangle-wave based modulator.
 \end{nbentry}
 
+\begin{nbentry}{021}{4/10/2011}{1.00}{More debugging}
+I spent some time today reviewing the gating circuitry for the MOSFETs.  It dawned on me that one of the gate drivers was driven with an open-collector signal (so there was a pull-up resistor in the signal path, leading to potentially slow turn-on times) and the other was driven with a push-pull signal from an inverter.  To equalize the two delays, two XOR gates were used.  The open-collector signal connects to both 'A' inputs.  The first gate's 'B' input is connected to 0v to make a pass-through gate, and the second gate's 'B' input is connected to 5v to make an inverter.
+
+Unfortunately, this did not fix the problem.  The amplifier can still output a negative voltage with a magnitude equal to the power supply voltage, but the positive voltage magnitude is limited to 10V or so.
+\end{nbentry}
+
 \end{document}
