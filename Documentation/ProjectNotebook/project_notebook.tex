@@ -241,4 +241,16 @@ Oscilloscope screen captures to follow.
 I replaced the inductor I had been testing with (which saturates at 2.3A) with one used on a previous project.  The replacement inductor has a saturation current of 4.9A.  Sadly, the low-voltage clipping and temporary power supply shorting behaviors remain.  I would like to blame transistor dead times, but I have no good way to prove this at present.
 \end{nbentry}
 
+\begin{nbentry}{020}{4/9/2011}{1.00}{Changing the analog front end}
+A lot of amp work was done today.
+
+First, I hooked up the logic analyzer to the gating command signals (from the comparator) and to the bottom MOSFET gates.  The upper gates were not included due to their need for a floating supply and the 5V maximum input of the logic analyzer.  It was discovered that at high input levels, the bottom MOSFET on a given channel would turn itself on while the top MOSFET was conducting, leading to the shoot-through condition.  I tried to stop this from happening by placing reverse-biased high-speed diodes between the source and drain of each MOSFET, but this did not solve the problem.  It may be necessary to get a "stronger" gate driver that can sink multiple amps of current to keep transistors turned off when they're supposed to be off.
+
+\includegraphics[scale=0.33]{img/switch_glitch.png}
+
+Noticing that the amp could become unstable at times with the DC blocking capacitor in the feedback loop, I rewired the analog front end to eliminate the need for this capacitor.  Instead of powering the input op-amp and comparator off of 5V as I had been doing, I now power them off of the full input voltage.  The input is limited to 30V by the gate driver, so no specs should be exceeded in doing this.  Additionally, the comparator output is open-collector, so logic level interfacing between the gate driver and comparator is done inherently and no special attention is needed to accomplish it.  A second op-amp channel is still used to create an internal low-current \(\frac{V_{CC}}{2}\) rail, but this rail now operates at half the supply voltage instead of 2.5V.
+
+A new problem was introduced, though.  If the requested output is greater than what the MOSFETs can supply for any period of time, the amplifier can stop oscillating.  Luckily, the failure mode happens such that one half-bridge stops conducting completely, so a speaker-destroying DC current does not appear across the speaker.  This issue will have to be dealt with prior to ordering amplifier PCBs.  One potential correctional measure is to include an additional triangle-wave based modulator.
+\end{nbentry}
+
 \end{document}

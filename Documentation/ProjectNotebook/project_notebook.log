@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (Web2C 2010) (format=pdflatex 2011.1.4)  8 APR 2011 21:52
+This is pdfTeX, Version 3.1415926-1.40.11 (Web2C 2010) (format=pdflatex 2011.1.4)  9 APR 2011 19:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,22 +731,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 240--243
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 244.
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 244.
+[7] <img/switch_glitch.png, id=58, 963.6pt x 340.27126pt>
+File: img/switch_glitch.png Graphic file (type png)
+
+<use img/switch_glitch.png>
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 256.
+[8 <./img/switch_glitch.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 256.
  (./project_notebook.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 244.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 256.
 Package rerunfilecheck Info: File `project_notebook.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14389 strings out of 493738
- 262081 string characters out of 3143932
+ 14396 strings out of 493738
+ 262211 string characters out of 3143932
  332337 words of memory out of 3000000
- 17382 multiletter control sequences out of 15000+200000
+ 17386 multiletter control sequences out of 15000+200000
  6984 words of font info for 25 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,15n,55p,879b,1040s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,16n,55p,879b,1040s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/LaTeX/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
 c:/LaTeX/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:
 /LaTeX/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/La
@@ -758,10 +766,10 @@ live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/LaTeX/texlive
 mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/LaTeX/texlive/2010/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/LaTeX/texlive/2010/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on project_notebook.pdf (7 pages, 421375 bytes).
+Output written on project_notebook.pdf (8 pages, 536071 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
