@@ -259,4 +259,15 @@ I spent some time today reviewing the gating circuitry for the MOSFETs.  It dawn
 Unfortunately, this did not fix the problem.  The amplifier can still output a negative voltage with a magnitude equal to the power supply voltage, but the positive voltage magnitude is limited to 10V or so.
 \end{nbentry}
 
+\begin{nbentry}{022}{4/13/2011}{1.00}{Duty cycle limiter and gate drive mods}
+After much head scratching, I arrived at a breakthrough on the the amplifier clipping problem.  I determined that the high-end clipping was due to the "top" MOSFET's bootstrap capacitor running out of charge during prolonged operation with the top switch turned on.  This condition manifested itself by having the top MOSFET on the "positive" channel (the one from which feedback is taken) become quite warm and stop conducting during prolonged "on" periods, that is, when the gate drive signal commanded that MOSFET on.
+
+To fix this, the bootstrap capacitor value was first increased to 1uF, after which a marked increase in available conduction time was noted... but the problem persisted at times.  Rather than increase the capacitor arbitrarily, an alternative solution was developed:  a duty cycle limiter.
+
+\includegraphics{img/dcl.png}
+
+The limiter consists of an RC circuit connected to an N-channel MOSFET.  The resistor in the RC circuit is connected in parallel with a diode biased such that it conducts only on the "low" edge of a PWM waveform.  The circuit's capacitor is connected across the MOSFET's gate and source terminals such that it delays the turn-on of the MOSFET.  When the PWM waveform goes high, the capacitor begins to charge via the resistor.  If the PWM signal goes low before the MOSFET turns on, the circuit operation is unchanged.  If, however, the PWM signal stays high long enough to charge the capacitor, the MOSFET fires and pulls the amplifier channel's audio input to ground via a resistor (not pictured).  When this signal goes to ground, the amplifier tries to compensate by reducing the output voltage, turning off the PWM signal and the problem transistor.  The duty cycle limited capacitor then discharges, and the circuit automatically resumes normal operation.
+
+It is believed that this circuit will fix nearly every issue this breadboarded prototype has been having.  Before ordering a final PCB, though, I will wait until I've had a chance to validate desired operation of the MCP14628 driver IC, which I hope to use in the new amplifier version due to performance and availability concerns with the old driver.
+\end{nbentry}
 \end{document}
