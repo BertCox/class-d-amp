@@ -270,4 +270,9 @@ The limiter consists of an RC circuit connected to an N-channel MOSFET.  The res
 
 It is believed that this circuit will fix nearly every issue this breadboarded prototype has been having.  Before ordering a final PCB, though, I will wait until I've had a chance to validate desired operation of the MCP14628 driver IC, which I hope to use in the new amplifier version due to performance and availability concerns with the old driver.
 \end{nbentry}
+
+\begin{nbentry}{023}{4/26/2011}{1.00}{New gate drivers}
+I put together a simple PCB I laid out based on the MCP14628 synchronous buck driver.  The board features the driver, two MOSFETs, and a couple of caps; that's it.  It turns out that the gate driver switches sufficiently fast that the breadboarded power supply (with copious decoupling) can't supply sufficient current pulses to operate the switch!  That is to say, the circuit sort of works but not really.  In order to tell for sure if this new gate driver will work as intended, it will likely be necessary to lay out a PCB for the amp without knowing beforehand if it will work.  Hopefully the product, experimental or not, will be ready in time for Maker Faire North Carolina, coming up in about 6 weeks.
+\end{nbentry}
+
 \end{document}

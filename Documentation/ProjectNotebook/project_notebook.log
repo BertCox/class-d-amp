@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (Web2C 2010) (format=pdflatex 2011.1.4)  13 APR 2011 21:08
+This is pdfTeX, Version 3.1415926-1.40.11 (Web2C 2010) (format=pdflatex 2011.1.4)  26 APR 2011 21:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -753,23 +753,27 @@ Overfull \hbox (55.70682pt too wide) in paragraph at lines 267--268
  []
 
 [9 <./img/dcl.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
-
 Underfull \hbox (badness 10000) in paragraph at lines 271--273
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--277
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 278.
 [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
  (./project_notebook.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
 Package rerunfilecheck Info: File `project_notebook.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  14403 strings out of 493738
  262294 string characters out of 3143932
- 332343 words of memory out of 3000000
+ 332337 words of memory out of 3000000
  17390 multiletter control sequences out of 15000+200000
  6984 words of font info for 25 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
@@ -785,7 +789,7 @@ live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/LaTeX/texlive
 mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/LaTeX/texlive/2010/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/LaTeX/texlive/2010/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on project_notebook.pdf (10 pages, 553534 bytes).
+Output written on project_notebook.pdf (10 pages, 554345 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream
