@@ -275,4 +275,12 @@ It is believed that this circuit will fix nearly every issue this breadboarded p
 I put together a simple PCB I laid out based on the MCP14628 synchronous buck driver.  The board features the driver, two MOSFETs, and a couple of caps; that's it.  It turns out that the gate driver switches sufficiently fast that the breadboarded power supply (with copious decoupling) can't supply sufficient current pulses to operate the switch!  That is to say, the circuit sort of works but not really.  In order to tell for sure if this new gate driver will work as intended, it will likely be necessary to lay out a PCB for the amp without knowing beforehand if it will work.  Hopefully the product, experimental or not, will be ready in time for Maker Faire North Carolina, coming up in about 6 weeks.
 \end{nbentry}
 
+\begin{nbentry}{024}{4/28/2011}{1.00}{New gate drivers}
+I tested the gate driver breakout board some more, and managed to short something out with a slip of the DMM probe while taking measurements.  The magic smoke was swiftly released... but the gate drivers appear to do the trick when suitably large reservior caps are present.  Thusly, I began a revised board layout incorporating all the changes made to the breadboarded version.
+\end{nbentry}
+
+\begin{nbentry}{025}{4/29/2011}{1.00}{New PCB layout}
+I worked on the revised schematic and board layout today.  Thirty-eight airwires remain, down from approximately 160 at the outset of the layout.  Hopefully, this layout will be completed this weekend or soon after.
+\end{nbentry}
+
 \end{document}
