@@ -308,9 +308,13 @@ A demonstration video has been posted to YouTube, and photos of the completed PC
 \end{nbentry}
 
 \begin{nbentry}{030}{5/30/2011}{1.00}{Minor schematic corrections}
-I spent a few minutes revisiting the input networks for the preamplifiers, and found that the blocking capacitor and biasing resistor made a highpass filter with a cutoff of 72Hz.  This could potentially lead to a dropoff in low-frequency response, so the 2.2k resistors were changed to 15k.  Similarly, the 2.2k resistors in the duty cycle limiters were changed to 15k to reduce the chances of the network altering the input signal.  These are very minor changes and do not require PCB changes.
+I spent a few minutes revisiting the input networks for the preamplifiers, and found that the blocking capacitor and biasing resistor made a highpass filter with a cutoff of 72Hz.  This could potentially lead to a dropoff in low-frequency response, so the 2.2k resistors were changed to 30k.  Similarly, the 2.2k resistors in the duty cycle limiters were changed to 30k to reduce the chances of the network altering the input signal.  These are very minor changes and do not require PCB changes.
 
 A plan is afoot to further increase amplifier power output by increasing the value of the feedback resistors.
+\end{nbentry}
+
+\begin{nbentry}{031}{8/6/2011}{1.00}{Testing the new component changes}
+While I do not have hard and fast data on frequency response or duty cycle limting (yet?), I am pleased to report that the amplifier produces a full 40W RMS into an 8-ohm load when driven with a 24V power supply.  This represents 46.8Vpp across the speaker!
 \end{nbentry}
 
 
