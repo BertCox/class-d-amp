@@ -8,9 +8,10 @@ Current Location: ClassDAmp/Electrical
 
 Notes:
     This directory contains the following files:
+    Version 3.0:
+	* single-supply-bridged schematic and layout: The most recent version of 	  the circuit, and the only supported version.
     Version 2.0:
-        * single-supply-bridged schematic and layout: The most recent (and only
-          supported) version, 50W max output
+        * single-supply-bridged schematic and layout: 50W max output, questionable 	  speaker protection circuit
     Version 1.0:    
         * class-d-amp-single-supply schematic and pcb: An untested lower-output
           version, appx. 15W per channel
